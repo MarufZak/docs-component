@@ -1,15 +1,34 @@
 .wrapper {
   width: var(--table-of-contents-width);
-  height: 100%;
-  position: relative;
 }
 
 .content {
   position: fixed;
-  height: 100%;
+  height: calc(100% - var(--header-height));
   width: var(--table-of-contents-width);
-  top: var(--header-height);
+  bottom: 0;
   right: 0;
   padding: 24px;
   overflow-y: auto;
+}
+
+.contentTitle {
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+.link:hover {
+  color: #fff;
+}
+
+.listItem:not(:last-child) {
+  margin-bottom: 8px;
 }

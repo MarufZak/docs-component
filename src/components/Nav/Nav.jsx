@@ -3,7 +3,7 @@ import styles from './Nav.module.css';
 function Nav() {
   return (
     <nav className={styles.nav}>
-      <div className={styles.navContent}>Nav</div>
+      <div className={styles.navContent}></div>
     </nav>
   );
 }

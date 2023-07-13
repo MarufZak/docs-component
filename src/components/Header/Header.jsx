@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
 
 function Header() {
-  return <header className={styles.header}>Header 🚀</header>;
+  return <header className={styles.header}></header>;
 }
 
 export default Header;

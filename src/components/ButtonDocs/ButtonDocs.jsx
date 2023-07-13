@@ -1,22 +1,27 @@
-import styles from './ButtonDocs.module.css';
+import Docs from '../Docs/Docs';
 
 function ButtonDocs() {
   return (
-    <div className={styles.wrapper}>
+    <Docs>
       <h1>Button Component</h1>
-      <article className={styles.article}>
+      <article>
         <h2>Basics</h2>
         <p>
           The Button component represents a clickable button element in a React
           application.
         </p>
+        <ul>
+          <li>My first item</li>
+          <li>My second item</li>
+          <li>My third item</li>
+        </ul>
         <h2>Props</h2>
         <p>
           The Button component accepts the following props: onClick (function,
-          required) Event handler for button click. It is triggered when the button
-          is clicked. disabled (boolean, optional) Specifies if the button should be
-          disabled. When set to true, the button will be unclickable and visually
-          disabled. Defaults to false
+          required) <a href="hi">Event handler</a> for button click. It is triggered
+          when the button is clicked. disabled (boolean, optional) Specifies if the
+          button should be disabled. When set to true, the button will be unclickable
+          and visually disabled. Defaults to false
         </p>
         <h2>Styling</h2>
         <p>
@@ -30,21 +35,26 @@ function ButtonDocs() {
           a CSS-in-JS solution such as styled-components. For example:
         </p>
       </article>
-      <article className={styles.article}>
-        <h2>CSS-in-js</h2>
+      <article>
+        <h2>Secondary styles</h2>
         <p>
           The Button component represents a clickable button element in a React
           application.
         </p>
-        <h2>Props</h2>
+        <ul>
+          <li>My first item</li>
+          <li>My second item</li>
+          <li>My third item</li>
+        </ul>
+        <h2>Using Props with Button</h2>
         <p>
           The Button component accepts the following props: onClick (function,
-          required) Event handler for button click. It is triggered when the button
-          is clicked. disabled (boolean, optional) Specifies if the button should be
-          disabled. When set to true, the button will be unclickable and visually
-          disabled. Defaults to false
+          required) <a href="hi">Event handler</a> for button click. It is triggered
+          when the button is clicked. disabled (boolean, optional) Specifies if the
+          button should be disabled. When set to true, the button will be unclickable
+          and visually disabled. Defaults to false
         </p>
-        <h2>Styling</h2>
+        <h2>Third part libraties</h2>
         <p>
           The Button component can be customized using CSS or CSS-in-JS libraries to
           match the desired visual style of your application. There are multiple ways
@@ -56,7 +66,7 @@ function ButtonDocs() {
           a CSS-in-JS solution such as styled-components. For example:
         </p>
       </article>
-    </div>
+    </Docs>
   );
 }
 

@@ -1,6 +1,6 @@
 .main {
   display: grid;
-  grid-template-columns: var(--nav-width) 1fr var(--table-of-contents-width);
+  grid-template-columns: var(--nav-width) 1fr;
   min-height: 100%;
 }
 
