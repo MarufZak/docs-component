@@ -7,14 +7,34 @@
 html {
   font-size: 62.5%;
   height: 100%;
+
+  --header-height: 64px;
+  --nav-width: 300px;
+  --table-of-contents-width: 256px;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: rgb(0, 30, 60);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #b2bac2;
   height: 100%;
 }
 
 #root {
   height: 100%;
+}
+
+h1,
+h2 {
+  color: #f3f6f9;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 2.4rem;
 }

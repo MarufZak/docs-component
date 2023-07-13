@@ -1,0 +1,15 @@
+.wrapper {
+  width: var(--table-of-contents-width);
+  height: 100%;
+  position: relative;
+}
+
+.content {
+  position: fixed;
+  height: 100%;
+  width: var(--table-of-contents-width);
+  top: var(--header-height);
+  right: 0;
+  padding: 24px;
+  overflow-y: auto;
+}

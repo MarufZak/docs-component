@@ -1,0 +1,12 @@
+.main {
+  display: grid;
+  grid-template-columns: var(--nav-width) 1fr var(--table-of-contents-width);
+  min-height: 100%;
+}
+
+.content {
+  padding-top: calc(var(--header-height) + 32px);
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 48px;
+}

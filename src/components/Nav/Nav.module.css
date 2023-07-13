@@ -1,11 +1,12 @@
-.aside {
+.nav {
   background-color: rgb(10, 25, 41);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 100%;
   border: 1px solid rgba(194, 224, 255, 0.08);
+}
+
+.navContent {
+  position: fixed;
+  width: var(--nav-width);
+  height: 100%;
 
   display: flex;
   align-items: center;
