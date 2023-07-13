@@ -1,0 +1,15 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 300px);
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3.6rem;
+  padding: 8px 16px;
+  background-color: rgba(10, 25, 41, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(194, 224, 255, 0.08);
+
+  color: #fff;
+}
