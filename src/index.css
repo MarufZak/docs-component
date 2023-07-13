@@ -29,7 +29,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: #f3f6f9;
 }
 
@@ -39,6 +40,10 @@ h1 {
 
 h2 {
   font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
 }
 
 a {

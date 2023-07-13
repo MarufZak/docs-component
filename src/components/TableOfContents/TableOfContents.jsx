@@ -8,25 +8,54 @@ function TableOfContents({ containerRef, ...props }) {
       return;
     }
 
-    const newItems = [];
-    const levelTwoHeadings = containerRef.current.querySelectorAll('h2');
+    let newItems = [];
 
+    const levelTwoHeadings = containerRef.current.querySelectorAll('h2');
     for (let i = 0; i < levelTwoHeadings.length; i++) {
       const heading = levelTwoHeadings[i];
       const text = heading.innerHTML;
-
-      if (typeof text !== 'string') {
-        throw new Error(`Children of heading tag should be text!`);
-      }
 
       const id = text.replace(/ /g, '-').toLowerCase();
       heading.setAttribute('id', id);
 
       newItems.push({
-        id: i,
+        id: Math.random(),
         url: `#${id}`,
         title: text,
+        sublinks: [],
       });
+    }
+
+    const levelThreeHeadings = containerRef.current.querySelectorAll('h3');
+    for (let i = 0; i < levelThreeHeadings.length; i++) {
+      const heading = levelThreeHeadings[i];
+      const id = heading.innerHTML.replace(/ /g, '-').toLowerCase();
+
+      heading.setAttribute('id', id);
+
+      let closestLevelTwoHeadingTitle;
+      let currCheckingElement = heading;
+      for (let i = 0; i < 100; i++) {
+        // FIX!
+        const prevSibling = currCheckingElement.previousSibling;
+        if (prevSibling.nodeName === 'H2') {
+          closestLevelTwoHeadingTitle = prevSibling.innerHTML;
+          break;
+        }
+        currCheckingElement = prevSibling;
+      }
+
+      for (let i = 0; i < newItems.length; i++) {
+        const item = newItems[i];
+
+        if (item.title === closestLevelTwoHeadingTitle) {
+          item.sublinks.push({
+            id: Math.random(),
+            title: heading.innerHTML,
+            url: `#${id}`,
+          });
+        }
+      }
     }
 
     setItems(newItems);
@@ -43,6 +72,19 @@ function TableOfContents({ containerRef, ...props }) {
                 <a className={styles.link} href={item.url}>
                   {item.title}
                 </a>
+                {item.sublinks.length > 0 && (
+                  <ul className={styles.list}>
+                    {item.sublinks.map((sublink) => {
+                      return (
+                        <li key={sublink.id} className={styles.listItem}>
+                          <a className={styles.link} href={sublink.url}>
+                            {sublink.title}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
               </li>
             );
           })}

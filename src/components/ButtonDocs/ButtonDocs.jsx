@@ -23,6 +23,22 @@ function ButtonDocs() {
           button should be disabled. When set to true, the button will be unclickable
           and visually disabled. Defaults to false
         </p>
+        <h3>Simple props</h3>
+        <p>
+          The Button component accepts the following props: onClick (function,
+          required) <a href="hi">Event handler</a> for button click. It is triggered
+          when the button is clicked. disabled (boolean, optional) Specifies if the
+          button should be disabled. When set to true, the button will be unclickable
+          and visually disabled. Defaults to false
+        </p>
+        <h3>Difficult props</h3>
+        <p>
+          The Button component accepts the following props: onClick (function,
+          required) <a href="hi">Event handler</a> for button click. It is triggered
+          when the button is clicked. disabled (boolean, optional) Specifies if the
+          button should be disabled. When set to true, the button will be unclickable
+          and visually disabled. Defaults to false
+        </p>
         <h2>Styling</h2>
         <p>
           The Button component can be customized using CSS or CSS-in-JS libraries to

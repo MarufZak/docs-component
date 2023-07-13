@@ -21,6 +21,11 @@
   list-style: none;
 }
 
+.list .list {
+  padding-left: 12px;
+  margin-top: 8px;
+}
+
 .link {
   font-size: 1.4rem;
   text-decoration: none;

@@ -13,6 +13,10 @@
   margin-bottom: 6px;
 }
 
+.docs h3 {
+  margin: 24px 0 8px;
+}
+
 .docs p {
   margin-bottom: 16px;
 }
