@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: var(--nav-width) 1fr;
   min-height: 100%;
+  padding-top: 12px;
 }
 
 .content {
-  padding-top: calc(var(--header-height) + 32px);
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 48px;
+  padding: 32px;
+  background-color: var(--color-white);
+  border-radius: 40px 0 0;
 }

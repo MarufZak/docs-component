@@ -1,27 +1,30 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr var(--table-of-contents-width);
-  color: #b2bac2;
 }
 
 .docs h1 {
   margin: 10px 0;
+  color: var(--color-gray-900);
 }
 
 .docs h2 {
   margin-top: 40px;
   margin-bottom: 6px;
+  color: var(--color-gray-900);
 }
 
 .docs h3 {
   margin: 24px 0 8px;
+  color: var(--color-gray-900);
 }
 
 .docs p {
   margin-bottom: 16px;
+  color: var(--color-gray-600);
 }
 
 .docs ul {
-  list-style: circle;
   padding-left: 30px;
+  color: var(--color-gray-600);
 }

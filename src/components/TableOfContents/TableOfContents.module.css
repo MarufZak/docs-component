@@ -4,21 +4,25 @@
 
 .content {
   position: fixed;
-  height: calc(100% - var(--header-height));
+  /* 12px - top padding from parent */
+  height: calc(100% - 12px);
   width: var(--table-of-contents-width);
-  bottom: 0;
+  top: 0;
   right: 0;
   padding: 24px;
+  padding-top: 64px;
   overflow-y: auto;
 }
 
 .contentTitle {
   font-size: 2.4rem;
   margin-bottom: 18px;
+  color: var(--color-gray-900);
 }
 
 .list {
   list-style: none;
+  color: var(--color-gray-600);
 }
 
 .list .list {
@@ -29,9 +33,12 @@
 .link {
   font-size: 1.4rem;
   text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
 }
+
 .link:hover {
-  color: #fff;
+  color: var(--color-gray-900);
 }
 
 .listItem:not(:last-child) {

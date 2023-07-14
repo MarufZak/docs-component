@@ -8,30 +8,31 @@ html {
   font-size: 62.5%;
   height: 100%;
 
-  --header-height: 64px;
   --nav-width: 300px;
   --table-of-contents-width: 256px;
 
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 16px);
+  scroll-padding-top: 16px;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(0, 30, 60);
+  background-color: var(--color-gray-900);
   font-size: 1.6rem;
   line-height: 1.5;
   height: 100%;
 }
 
-#root {
-  height: 100%;
+:root {
+  --color-gray-900: #101828;
+  --color-gray-700: #344054;
+  --color-gray-600: #475467;
+
+  --color-white: #ffffff;
 }
 
-h1,
-h2,
-h3 {
-  color: #f3f6f9;
+#root {
+  height: 100%;
 }
 
 h1 {

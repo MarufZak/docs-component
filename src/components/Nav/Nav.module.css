@@ -1,16 +1,25 @@
-.nav {
-  background-color: rgb(10, 25, 41);
-  border: 1px solid rgba(194, 224, 255, 0.08);
-}
-
 .navContent {
   position: fixed;
   width: var(--nav-width);
   height: 100%;
+  padding: 88px 24px;
+}
 
+.list {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.6rem;
-  color: #fff;
+  flex-direction: column;
+  list-style: none;
+}
+
+.link {
+  display: block;
+  padding: 8px 12px;
+  font-size: 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.active {
+  background-color: var(--color-gray-700);
 }

@@ -50,6 +50,22 @@ function ButtonDocs() {
           className prop. These classes can be defined in an external CSS file or in
           a CSS-in-JS solution such as styled-components. For example:
         </p>
+        <h3>Simple styling</h3>
+        <p>
+          The Button component accepts the following props: onClick (function,
+          required) <a href="hi">Event handler</a> for button click. It is triggered
+          when the button is clicked. disabled (boolean, optional) Specifies if the
+          button should be disabled. When set to true, the button will be unclickable
+          and visually disabled. Defaults to false
+        </p>
+        <h3>Difficult styling</h3>
+        <p>
+          The Button component accepts the following props: onClick (function,
+          required) <a href="hi">Event handler</a> for button click. It is triggered
+          when the button is clicked. disabled (boolean, optional) Specifies if the
+          button should be disabled. When set to true, the button will be unclickable
+          and visually disabled. Defaults to false
+        </p>
       </article>
       <article>
         <h2>Secondary styles</h2>

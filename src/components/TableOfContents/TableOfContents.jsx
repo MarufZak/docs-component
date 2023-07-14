@@ -66,15 +66,16 @@ function TableOfContents({ containerRef, ...props }) {
       <div className={styles.content}>
         <h3 className={styles.contentTitle}>Contents</h3>
         <ul className={styles.list}>
-          {items?.map((item) => {
+          {items?.map((link) => {
+            const hasSublist = link.sublinks.length > 0;
             return (
-              <li key={item.id} className={styles.listItem}>
-                <a className={styles.link} href={item.url}>
-                  {item.title}
+              <li key={link.id} className={styles.listItem}>
+                <a className={styles.link} href={link.url}>
+                  {link.title}
                 </a>
-                {item.sublinks.length > 0 && (
+                {hasSublist && (
                   <ul className={styles.list}>
-                    {item.sublinks.map((sublink) => {
+                    {link.sublinks.map((sublink) => {
                       return (
                         <li key={sublink.id} className={styles.listItem}>
                           <a className={styles.link} href={sublink.url}>
