@@ -3,6 +3,8 @@ import styles from './TableOfContents.module.css';
 
 function TableOfContents({ containerRef, ...props }) {
   const [items, setItems] = React.useState([]);
+  const [activeItemHash, setActiveItemHash] = React.useState('');
+
   React.useEffect(() => {
     if (!containerRef.current) {
       return;
@@ -20,7 +22,7 @@ function TableOfContents({ containerRef, ...props }) {
 
       newItems.push({
         id: Math.random(),
-        url: `#${id}`,
+        hash: `#${id}`,
         title: text,
         sublinks: [],
       });
@@ -52,7 +54,7 @@ function TableOfContents({ containerRef, ...props }) {
           item.sublinks.push({
             id: Math.random(),
             title: heading.innerHTML,
-            url: `#${id}`,
+            hash: `#${id}`,
           });
         }
       }
@@ -60,6 +62,44 @@ function TableOfContents({ containerRef, ...props }) {
 
     setItems(newItems);
   }, [containerRef]);
+
+  React.useEffect(() => {
+    const changeHandler = (e) => {
+      const newHash = e.target.location.hash;
+      setActiveItemHash(newHash);
+    };
+    window.addEventListener('hashchange', changeHandler);
+
+    return () => {
+      window.removeEventListener('hashchange', changeHandler);
+    };
+  }, []);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let noneSelected = true;
+        entries.forEach((entry) => {
+          if (entry.boundingClientRect.top <= entry.boundingClientRect.height) {
+            const newActiveItemHash = `#${entry.target.getAttribute('id')}`;
+            setActiveItemHash(newActiveItemHash);
+          }
+        });
+      },
+      {
+        rootMargin: '-50px',
+      }
+    );
+
+    const headings = document.querySelectorAll('h2, h3');
+    for (let i = 0; i < headings.length; i++) {
+      observer.observe(headings[i]);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div {...props} className={styles.wrapper}>
@@ -69,16 +109,30 @@ function TableOfContents({ containerRef, ...props }) {
           {items?.map((link) => {
             const hasSublist = link.sublinks.length > 0;
             return (
-              <li key={link.id} className={styles.listItem}>
-                <a className={styles.link} href={link.url}>
+              <li
+                key={link.id}
+                className={
+                  link.hash === activeItemHash
+                    ? `${styles.listItem} ${styles.active}`
+                    : styles.listItem
+                }
+              >
+                <a className={styles.link} href={link.hash}>
                   {link.title}
                 </a>
                 {hasSublist && (
                   <ul className={styles.list}>
                     {link.sublinks.map((sublink) => {
                       return (
-                        <li key={sublink.id} className={styles.listItem}>
-                          <a className={styles.link} href={sublink.url}>
+                        <li
+                          key={sublink.id}
+                          className={
+                            sublink.hash === activeItemHash
+                              ? `${styles.listItem} ${styles.active}`
+                              : styles.listItem
+                          }
+                        >
+                          <a className={styles.link} href={sublink.hash}>
                             {sublink.title}
                           </a>
                         </li>

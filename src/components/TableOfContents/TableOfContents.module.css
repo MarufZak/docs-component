@@ -44,3 +44,7 @@
 .listItem:not(:last-child) {
   margin-bottom: 8px;
 }
+
+.active {
+  color: red;
+}
