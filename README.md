@@ -5,7 +5,7 @@ A simple,reusable and customizable React component that auto-generates a docs pa
 ## API
 
 ``` js
-import Docs from 'docs-component';
+import Docs from './Docs';
 
 const PageDocs = ()=>{
   return <Docs>
