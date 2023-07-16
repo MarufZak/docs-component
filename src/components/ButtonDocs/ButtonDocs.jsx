@@ -2,7 +2,7 @@ import Docs from '../Docs/Docs';
 
 function ButtonDocs() {
   return (
-    <Docs>
+    <Docs title="Button">
       <h1>Button Component</h1>
       <article>
         <h2>Basics</h2>
