@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './TableOfContents.module.css';
+import styles from './Docs.module.css';
 
 function TableOfContents({ activeItemHash, items, title, ...props }) {
   return (
-    <div {...props} className={styles.wrapper}>
+    <div {...props} className={styles.tableOfContents}>
       <div className={styles.content}>
         <h3 className={styles.contentTitle}>{title}</h3>
         <ul className={styles.list}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import TableOfContents from '../TableOfContents';
+import TableOfContents from './TableOfContents';
 import styles from './Docs.module.css';
 
 function Docs({ title, children }) {
